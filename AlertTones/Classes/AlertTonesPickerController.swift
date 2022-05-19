@@ -32,7 +32,7 @@ public class AlertTonesPickerController: AlertTonesViewController {
         
         let classicAlertTones = alertTonesManager.classicTones()
         if (classicAlertTones.isEmpty == false) {
-            items.append(.subMenu("Classic", classicAlertTones))
+            items.append(.subMenu("Classic".localized, classicAlertTones))
         }
         
         self.viewModel.items = items

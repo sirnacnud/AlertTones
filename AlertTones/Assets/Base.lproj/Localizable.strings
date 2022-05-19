@@ -1,0 +1,87 @@
+/* Classic Tones */
+
+"Alert" = "Alert";
+
+"Anticipate" = "Anticipate";
+
+"Bell" = "Bell";
+
+"Bloom" = "Bloom";
+
+"Calypso" = "Calypso";
+
+"Chime" = "Chime";
+
+"Choo Choo" = "Choo Choo";
+
+"Descent" = "Descent";
+
+"Ding" = "Ding";
+
+"Electronic" = "Electronic";
+
+"Fanfare" = "Fanfare";
+
+"Glass" = "Glass";
+
+"Horn" = "Horn";
+
+"Ladder" = "Ladder";
+
+"Minute" = "Minute";
+
+"News Flash" = "News Flash";
+
+"Noir" = "Noir";
+
+"Sherwood Forest" = "Sherwood Forest";
+
+"Spell" = "Spell";
+
+"Suspense" = "Suspense";
+
+"Swish" = "Swish";
+
+"Swoosh" = "Swoosh";
+
+"Telegraph" = "Telegraph";
+
+"Tiptoes" = "Tiptoes";
+
+"Tri-tone" = "Tri-tone";
+
+"Tweet" = "Tweet";
+
+"Typewriters" = "Typewriters";
+
+"Update" = "Update";
+
+/* Modern Tones */
+
+"Aurora" = "Aurora";
+
+"Bamboo" = "Bamboo";
+
+"Chord" = "Chord";
+
+"Circles" = "Circles";
+
+"Complete" = "Complete";
+
+"Hello" = "Hello";
+
+"Input" = "Input";
+
+"Keys" = "Keys";
+
+"Note" = "Note";
+
+"Popcorn" = "Popcorn";
+
+"Pulse" = "Pulse";
+
+"Synth" = "Synth";
+
+/* Other strings */
+
+"Classic" = "Classic";
