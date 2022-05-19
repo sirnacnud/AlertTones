@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlertTones'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of AlertTones.'
 
 # This description is used to generate tags and improve search results.
@@ -21,21 +21,15 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Duncan Cunningham/AlertTones'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/sirnacnud/AlertTones'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Duncan Cunningham' => 'duncanc4@gmail.com' }
-  s.source           = { :git => 'https://github.com/Duncan Cunningham/AlertTones.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/sirnacnud/AlertTones.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'AlertTones/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'AlertTones' => ['AlertTones/Assets/*.png']
-  # }
-
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'

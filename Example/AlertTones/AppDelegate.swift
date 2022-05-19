@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import AlertTones
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private let alertTonesDataSource = ExampleAlertTonesViewControllerDataSource()
+    
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let alertTonesPickerController = AlertTonesPickerController(style: .grouped)
+        alertTonesPickerController.dataSource = self.alertTonesDataSource
+        alertTonesPickerController.delegate = self
+        
+        let navigationController = UINavigationController(rootViewController: alertTonesPickerController)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -41,6 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
+// MARK: - AlertTonesViewControllerDelegate
+
+extension AppDelegate: AlertTonesViewControllerDelegate {
+    
+    func didSelectAlertTone(alertTone: AlertTone) {
+        self.alertTonesDataSource.setSelectedAlertTone(alertTone: alertTone)
+    }
+}

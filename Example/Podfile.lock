@@ -1,0 +1,16 @@
+PODS:
+  - AlertTones (1.0.0)
+
+DEPENDENCIES:
+  - AlertTones (from `../`)
+
+EXTERNAL SOURCES:
+  AlertTones:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AlertTones: c3c9cc1ce869b65788a5288b3036588b8c3c9ae5
+
+PODFILE CHECKSUM: ac1a4891db877c487e460c56fc78d4467603e65d
+
+COCOAPODS: 1.10.1
