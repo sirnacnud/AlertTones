@@ -7,28 +7,37 @@
 
 import Foundation
 
-public struct AlertTonesManager {
+public class AlertTonesManager {
     
-    private static let classicNamed = [
-        "Alert": "/System/Library/Audio/UISounds/alarm.caf",
-        "Bell": "/System/Library/Audio/UISounds/sms-received5.caf",
-        "Chime": "/System/Library/Audio/UISounds/sms-received2.caf",
-        "Ding": "/System/Library/Audio/UISounds/new-mail.caf",
-        "Electronic": "/System/Library/Audio/UISounds/sms-received6.caf",
-        "Glass": "/System/Library/Audio/UISounds/sms-received3.caf",
-        "Horn": "/System/Library/Audio/UISounds/sms-received4.caf",
-        "Swish": "/System/Library/Audio/UISounds/Swish.caf",
-        "Swoosh": "/System/Library/Audio/UISounds/mail-sent.caf",
-        "Tri-tone": "/System/Library/Audio/UISounds/sms-received1.caf",
-        "Tweet": "/System/Library/Audio/UISounds/tweet_sent.caf"
+    private lazy var systemLibraryPath: String = {
+        #if targetEnvironment(simulator)
+            let xcodePath = (ProcessInfo.processInfo.environment["XCODE-PATH"] ?? "")
+            return "\(xcodePath)/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library"
+        #else
+            return "/System/Library"
+        #endif
+    }()
+    
+    private lazy var classicNamed = [
+        "Alert": "\(self.systemLibraryPath)/Audio/UISounds/alarm.caf",
+        "Bell": "\(self.systemLibraryPath)/Audio/UISounds/sms-received5.caf",
+        "Chime": "\(self.systemLibraryPath)/Audio/UISounds/sms-received2.caf",
+        "Ding": "\(self.systemLibraryPath)/Audio/UISounds/new-mail.caf",
+        "Electronic": "\(self.systemLibraryPath)/Audio/UISounds/sms-received6.caf",
+        "Glass": "\(self.systemLibraryPath)/Audio/UISounds/sms-received3.caf",
+        "Horn": "\(self.systemLibraryPath)/Audio/UISounds/sms-received4.caf",
+        "Swish": "\(self.systemLibraryPath)/Audio/UISounds/Swish.caf",
+        "Swoosh": "\(self.systemLibraryPath)/Audio/UISounds/mail-sent.caf",
+        "Tri-tone": "\(self.systemLibraryPath)/Audio/UISounds/sms-received1.caf",
+        "Tweet": "\(self.systemLibraryPath)/Audio/UISounds/tweet_sent.caf"
     ]
     
     public func classicTones() -> [AlertTone] {
-        var classicTones = self.fetchAlertTones(from: "/System/Library/Audio/UISounds/New")
+        var classicTones = self.fetchAlertTones(from: "\(self.systemLibraryPath)/Audio/UISounds/New")
         
         let fileManager = FileManager.default
         
-        for (name, path) in Self.classicNamed {
+        for (name, path) in self.classicNamed {
             guard (fileManager.fileExists(atPath: path) == true) else {
                 continue
             }
@@ -40,7 +49,7 @@ public struct AlertTonesManager {
     }
     
     public func modernTones() -> [AlertTone] {
-        let modernTones = self.fetchAlertTones(from: "/System/Library/PrivateFrameworks/ToneLibrary.framework/AlertTones/Modern")
+        let modernTones = self.fetchAlertTones(from: "\(self.systemLibraryPath)/PrivateFrameworks/ToneLibrary.framework/AlertTones/Modern")
         return modernTones.sorted(by: { $0.name < $1.name })
     }
     
