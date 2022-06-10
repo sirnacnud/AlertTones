@@ -25,6 +25,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Duncan Cunningham' => 'duncanc4@gmail.com' }
   s.source           = { :git => 'https://github.com/sirnacnud/AlertTones.git', :tag => s.version.to_s }
+  s.swift_version    = '5.0' 
 
   s.ios.deployment_target = '9.0'
 
