@@ -33,6 +33,7 @@ internal struct AlertTonesViewControllerViewModel {
 
 public class AlertTonesViewController: UITableViewController {
     
+    @objc
     public var dataSource: AlertTonesViewControllerDataSource? {
         didSet {
             let selectedIndexPath: IndexPath? = {
@@ -60,6 +61,7 @@ public class AlertTonesViewController: UITableViewController {
         }
     }
     
+    @objc
     public weak var delegate: AlertTonesViewControllerDelegate?
     
     internal var viewModel = AlertTonesViewControllerViewModel()
