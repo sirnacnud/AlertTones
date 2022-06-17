@@ -8,19 +8,9 @@
 import Foundation
 
 extension String {
-    
-    private static let resourceBundle: Bundle? = {
-        let podBundle = Bundle(for: AlertTonesManager.self)
-        
-        guard let resourceBundleURL = podBundle.url(forResource: "AlertTones", withExtension: "bundle") else {
-            return nil
-        }
-        
-        return Bundle(url: resourceBundleURL)
-    }()
-    
+
     internal var localized: String {
-        guard let resourceBundle = Self.resourceBundle else {
+        guard let resourceBundle = ResourceBundle.instance else {
             return ""
         }
         

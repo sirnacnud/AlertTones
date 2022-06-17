@@ -69,6 +69,10 @@ public class AlertTonesViewController: UITableViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let bundle = ResourceBundle.instance {
+            tableView.register(UINib(nibName: "AlertTonesTableViewCell", bundle: bundle), forCellReuseIdentifier: AlertTonesTableViewCell.reuseIdentifier)
+        }
+        
         tableView.reloadData()
     }
     
@@ -81,7 +85,7 @@ public class AlertTonesViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: AlertTonesTableViewCell.reuseIdentifier, for: indexPath)
         
         if case let .tone(alertTone) = self.viewModel.items[indexPath.row] {
             cell.textLabel?.text = alertTone.name
@@ -105,6 +109,14 @@ public class AlertTonesViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    public override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? AlertTonesTableViewCell else {
+            return
+        }
+        
+        cell.applyDisclosureIndicatorColor()
     }
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
