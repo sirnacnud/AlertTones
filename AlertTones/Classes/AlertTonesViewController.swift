@@ -129,7 +129,9 @@ public class AlertTonesViewController: UITableViewController {
             var soundID: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(alertTone.url as CFURL, &soundID)
 
-            AudioServicesPlaySystemSound(soundID)
+            AudioServicesPlaySystemSoundWithCompletion(soundID) {
+                AudioServicesDisposeSystemSoundID(soundID)
+            }
             
             self.delegate?.didSelectAlertTone(alertTone: alertTone)
         } else if case let .subMenu(title, alertTones) = self.viewModel.items[indexPath.row] {
