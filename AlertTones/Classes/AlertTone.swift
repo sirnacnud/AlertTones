@@ -9,9 +9,13 @@ import Foundation
 
 public final class AlertTone: NSObject, Codable {
     
+    @objc
     public let name: String
+    
+    @objc
     public let url: URL
     
+    @objc
     public init(name: String, url: URL) {
         self.name = name
         self.url = url
