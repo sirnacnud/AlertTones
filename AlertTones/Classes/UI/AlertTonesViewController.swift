@@ -88,7 +88,7 @@ public class AlertTonesViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: AlertTonesTableViewCell.reuseIdentifier, for: indexPath)
         
         if case let .tone(alertTone) = self.viewModel.items[indexPath.row] {
-            cell.textLabel?.text = alertTone.name
+            cell.textLabel?.text = alertTone.name.localized
             
             if
                 let selectedAlertTone = self.dataSource?.selectedAlertTone,
@@ -104,7 +104,7 @@ public class AlertTonesViewController: UITableViewController {
             if
                 let selectedAlertTone = self.dataSource?.selectedAlertTone,
                 alertTones.contains(selectedAlertTone) {
-                    cell.detailTextLabel?.text = selectedAlertTone.name
+                    cell.detailTextLabel?.text = selectedAlertTone.name.localized
             }
         }
         
@@ -182,7 +182,7 @@ extension AlertTonesViewController: AlertTonesViewControllerDelegate {
         let indexPath = IndexPath(row: self.viewModel.items.count - 1, section: 0)
         self.viewModel.selectedIndexPath = indexPath
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.detailTextLabel?.text = alertTone.name
+        cell?.detailTextLabel?.text = alertTone.name.localized
         
         self.delegate?.didSelectAlertTone(alertTone: alertTone)
     }

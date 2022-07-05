@@ -19,17 +19,17 @@ public class AlertTonesManager {
     }()
     
     private lazy var classicNamed = [
-        "Alert".localized: "\(self.systemLibraryPath)/Audio/UISounds/alarm.caf",
-        "Bell".localized: "\(self.systemLibraryPath)/Audio/UISounds/sms-received5.caf",
-        "Chime".localized: "\(self.systemLibraryPath)/Audio/UISounds/sms-received2.caf",
-        "Ding".localized: "\(self.systemLibraryPath)/Audio/UISounds/new-mail.caf",
-        "Electronic".localized: "\(self.systemLibraryPath)/Audio/UISounds/sms-received6.caf",
-        "Glass".localized: "\(self.systemLibraryPath)/Audio/UISounds/sms-received3.caf",
-        "Horn".localized: "\(self.systemLibraryPath)/Audio/UISounds/sms-received4.caf",
-        "Swish".localized: "\(self.systemLibraryPath)/Audio/UISounds/Swish.caf",
-        "Swoosh".localized: "\(self.systemLibraryPath)/Audio/UISounds/mail-sent.caf",
-        "Tri-tone".localized: "\(self.systemLibraryPath)/Audio/UISounds/sms-received1.caf",
-        "Tweet".localized: "\(self.systemLibraryPath)/Audio/UISounds/tweet_sent.caf"
+        "Alert": "\(self.systemLibraryPath)/Audio/UISounds/alarm.caf",
+        "Bell": "\(self.systemLibraryPath)/Audio/UISounds/sms-received5.caf",
+        "Chime": "\(self.systemLibraryPath)/Audio/UISounds/sms-received2.caf",
+        "Ding": "\(self.systemLibraryPath)/Audio/UISounds/new-mail.caf",
+        "Electronic": "\(self.systemLibraryPath)/Audio/UISounds/sms-received6.caf",
+        "Glass": "\(self.systemLibraryPath)/Audio/UISounds/sms-received3.caf",
+        "Horn": "\(self.systemLibraryPath)/Audio/UISounds/sms-received4.caf",
+        "Swish": "\(self.systemLibraryPath)/Audio/UISounds/Swish.caf",
+        "Swoosh": "\(self.systemLibraryPath)/Audio/UISounds/mail-sent.caf",
+        "Tri-tone": "\(self.systemLibraryPath)/Audio/UISounds/sms-received1.caf",
+        "Tweet": "\(self.systemLibraryPath)/Audio/UISounds/tweet_sent.caf"
     ]
     
     public func classicTones() -> [AlertTone] {
@@ -83,6 +83,6 @@ public class AlertTonesManager {
         let nameWithoutExtension = String(name.dropLast(4))
         let nameWithoutUnderscore = nameWithoutExtension.replacingOccurrences(of: "_", with: " ")
         
-        return AlertTone(name: nameWithoutUnderscore.localized, url: url)
+        return AlertTone(name: nameWithoutUnderscore, url: url)
     }
 }

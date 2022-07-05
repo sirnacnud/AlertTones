@@ -1,5 +1,9 @@
 PODS:
-  - AlertTones (1.0.0)
+  - AlertTones (1.0.0):
+    - AlertTones/UI (= 1.0.0)
+  - AlertTones/Core (1.0.0)
+  - AlertTones/UI (1.0.0):
+    - AlertTones/Core
 
 DEPENDENCIES:
   - AlertTones (from `../`)
@@ -9,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AlertTones: b4e245f0e5536c0f6635c4c3ecd28e6dbe5e1ed9
+  AlertTones: fd2aa79e695401800ff7bb466f36cfba182cf541
 
 PODFILE CHECKSUM: ac1a4891db877c487e460c56fc78d4467603e65d
 

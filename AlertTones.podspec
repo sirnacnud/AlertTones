@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'AlertTones'
   s.version          = '1.0.0'
-  s.summary          = 'A short description of AlertTones.'
+  s.summary          = 'iOS AlertTones framework'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Swift library to provide easy acess to the iOS provided Alert Tones.
                        DESC
 
   s.homepage         = 'https://github.com/sirnacnud/AlertTones'
@@ -26,14 +26,17 @@ TODO: Add long description of the pod here.
   s.author           = { 'Duncan Cunningham' => 'duncanc4@gmail.com' }
   s.source           = { :git => 'https://github.com/sirnacnud/AlertTones.git', :tag => s.version.to_s }
   s.swift_version    = '5.0' 
-
+  s.default_subspec  = 'UI'
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'AlertTones/Classes/**/*'
+  s.subspec "Core" do |spec|
+    spec.source_files = 'AlertTones/Classes/Core/**/*'
+  end
 
-  s.resource_bundle = { 'AlertTones': 'AlertTones/Assets/**/*'}
-  
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec "UI" do |spec|
+    spec.source_files = 'AlertTones/Classes/UI/**/*'
+    spec.resource_bundle = { 'AlertTones': 'AlertTones/Assets/**/*'}
+    spec.dependency 'AlertTones/Core'
+  end
+
 end
