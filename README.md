@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/AlertTones.svg?style=flat)](https://cocoapods.org/pods/AlertTones)
 [![Platform](https://img.shields.io/cocoapods/p/AlertTones.svg?style=flat)](https://cocoapods.org/pods/AlertTones)
 
+Swift library that provides support for using the iOS System Alert Tones from the Settings app. These are the default tones you can select when recieveing a message, found in: *Settings->Notifications->Messages->Sounds*.
+
+The library providers a picker UI similar to what is in the Settings app. Alternatively, if you want to use your own UI, you can use just the core functionality to access the alert tones files.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -14,15 +18,17 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Installation
 
 AlertTones is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following line to your Podfile. This will include the picker UI by default.
 
 ```ruby
 pod 'AlertTones'
 ```
 
+If you want only want the core functionality, use the `AlertTones/Cores` subspec instead.
+
 ## Author
 
-Duncan Cunningham, duncanc4@gmail.com
+Duncan Cunningham
 
 ## License
 
