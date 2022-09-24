@@ -27,7 +27,7 @@ Swift library to provide easy acess to the iOS provided Alert Tones.
   s.source           = { :git => 'https://github.com/sirnacnud/AlertTones.git', :tag => s.version.to_s }
   s.swift_version    = '5.0' 
   s.default_subspec  = 'UI'
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
 
   s.subspec "Core" do |spec|
     spec.source_files = 'AlertTones/Classes/Core/**/*'
