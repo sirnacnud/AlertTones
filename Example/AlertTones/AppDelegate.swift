@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let alertTonesPickerController = AlertTonesPickerController(style: .grouped)
+        alertTonesPickerController.title = "Alert Tones"
         alertTonesPickerController.dataSource = self.alertTonesDataSource
         alertTonesPickerController.delegate = self
         
