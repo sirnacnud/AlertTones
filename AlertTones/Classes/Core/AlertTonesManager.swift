@@ -11,7 +11,15 @@ public class AlertTonesManager {
     
     private lazy var systemLibraryPath: String = {
         #if targetEnvironment(simulator)
-            let xcodePath = (ProcessInfo.processInfo.environment["XCODE-PATH"] ?? "")
+            let xcodePath: String
+            let xcodePathFromBundle = Bundle.main.object(forInfoDictionaryKey: "XcodePath") as? String
+        
+            if let xcodePathFromBundle = xcodePathFromBundle {
+                xcodePath = xcodePathFromBundle
+            } else {
+                xcodePath = "/Applications/Xcode.app"
+            }
+        
             return "\(xcodePath)/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library"
         #else
             return "/System/Library"
