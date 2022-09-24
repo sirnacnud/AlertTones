@@ -10,13 +10,13 @@ import AudioToolbox
 import UIKit
 
 @objc
-public protocol AlertTonesViewControllerDelegate: class {
+public protocol AlertTonesViewControllerDelegate: AnyObject {
     
     func didSelectAlertTone(alertTone: AlertTone)
 }
 
 @objc
-public protocol AlertTonesViewControllerDataSource: class {
+public protocol AlertTonesViewControllerDataSource: AnyObject {
     
     var selectedAlertTone: AlertTone? { get }
 }
